@@ -1,0 +1,34 @@
+MIRI AUTHENTICATION PLATFORM
+Integration APIs — 60-second explainer
+
+VOICE: male, measured, confident (en-US-GuyNeural)
+
+[0] OPEN
+The Miri Authentication Platform. Three products, one defense against static secrets.
+
+[1] MIRI ID
+Miri ID. A sixteen-character credential, dynamic and one-time, replacing usernames and passwords.
+
+[2] MIRI TOKEN
+Miri Token. Nine digits, generated offline: a one-time password that replaces SMS codes for multi-factor authentication.
+
+[3] MIRI CARD
+Miri Card. A one-time virtual card number, generated offline, obscuring the real card and supporting recurring merchant payments.
+
+[4] BRIDGE
+Four processes take Miri live.
+
+[5] REGISTRATION — MIS APIs
+Registration. Integrate MIS APIs with your application to onboard users and create their profiles and accounts.
+
+[6] ACTIVATION — MAS APIs
+Activation. Use MAS APIs in your mobile apps so users can activate a Miri account and sync the authentication seed data.
+
+[7] MIRI NUMBER GENERATION — SDKs
+Generation. Embed the Miri SDKs for Android, iOS, Windows, and Mac, so mobile, PC, and web apps can generate a dynamic, one-time Miri number.
+
+[8] MIRI NUMBER VALIDATION — MDS Decoder APIs
+Validation. Connect MDS Decoder APIs to your authentication servers to check Miri ID at login, Miri Token for two-factor, and Miri Card on each transaction.
+
+[9] CLOSE
+Dynamic credentials, verified at the source.
