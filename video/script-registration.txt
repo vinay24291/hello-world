@@ -1,0 +1,28 @@
+MIRI AUTHENTICATION PLATFORM
+Registration process — Profile, Account, Activation Record
+
+VOICE: male, measured (en-US-GuyNeural)
+
+[1] THREE CALLS
+Registration uses three API calls. Profile Create, Account Create, and Create Activation Record.
+
+[2] PROFILE AND ACCOUNT
+A profile is a real user of the application you are integrating with the Miri Authentication Platform. An account is that user's device or app, and accounts are created under the profile. To generate an offline one-time password on both an iPhone and an Android phone, create two accounts under the same profile, and activate both devices.
+
+[3] ORDER
+Create the profile first. Then create an account for each device. Then create an activation record for the account you want to activate.
+
+[4] PROFILE CREATE — REQUEST
+Profile Create is a POST to {{baseUrl}}/{{MISUrl}}/profile/create. Issuer and Profile Expire Date are the only mandatory parameters. Issuer is the ID of the issuer the profile belongs to. Profile Expire Date is the profile expiry, and every account under that profile shares the same date. Lookup Data 1 and Lookup Data 2 are optional identifiers for the profile when a Miri Token is validated. Response Data 1, 2, and 3 are optional values returned after a successful Miri number validation. Every other field is optional.
+
+[5] PROFILE CREATE — RESPONSE
+Store the Profile ID from the response against your user record. Later API calls need it. A status code of 0, and a status message of Success, mean the profile was created. Any other status code is an error, and the status message describes that error.
+
+[6] ACCOUNT CREATE
+Account Create adds one device or app under that profile. Call it once for every device the user will activate.
+
+[7] CREATE ACTIVATION RECORD
+Create Activation Record generates an activation code for a Miri account. The mobile app needs that code to activate the account. The code is one-time use, and it must be used within the validity time configured for the issuer.
+
+[8] CLOSE
+Profile, then account, then a one-time activation code.
